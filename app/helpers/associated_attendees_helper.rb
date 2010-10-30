@@ -1,0 +1,2 @@
+module AssociatedAttendeesHelper
+end

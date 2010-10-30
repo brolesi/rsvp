@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @custom_question.question %>
+</p>
+
+<p>
+  <b>Question type:</b>
+  <%= @custom_question.question_type_id %>
+</p>
+
+<p>
+  <b>Sort order:</b>
+  <%= @custom_question.sort_order %>
+</p>
+
+<p>
+  <b>Permission level:</b>
+  <%= @custom_question.permission_level %>
+</p>
+
+
+<%= link_to 'Edit', edit_custom_question_path(@custom_question) %> |
+<%= link_to 'Back', custom_questions_path %>

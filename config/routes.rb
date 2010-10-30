@@ -1,4 +1,26 @@
 Rsvp::Application.routes.draw do
+  resources :associated_attendees
+
+  resources :attendee_answers
+
+  resources :custom_question_attendees
+
+  resources :custom_question_answers
+
+  resources :custom_questions
+
+  resources :question_types
+
+  resources :attendees
+
+  resources :basics
+
+  resources :options
+
+  resources :invites
+
+  resources :events
+
   resources :tags
 
   resources :categories

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  rsvp_date: 2010-10-30 14:51:17
+  rsvp_status: MyString
+  note: MyText
+  kids_meal: MyString
+  additional_attendee: MyString
+  veggie_meal: MyString
+  personal_greeting: MyText
+
+two:
+  first_name: MyString
+  last_name: MyString
+  rsvp_date: 2010-10-30 14:51:17
+  rsvp_status: MyString
+  note: MyText
+  kids_meal: MyString
+  additional_attendee: MyString
+  veggie_meal: MyString
+  personal_greeting: MyText

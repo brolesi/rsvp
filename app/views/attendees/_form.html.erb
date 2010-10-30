@@ -1,0 +1,53 @@
+<%= form_for(@attendee) do |f| %>
+  <% if @attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% @attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :rsvp_date %><br />
+    <%= f.datetime_select :rsvp_date %>
+  </div>
+  <div class="field">
+    <%= f.label :rsvp_status %><br />
+    <%= f.text_field :rsvp_status %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :kids_meal %><br />
+    <%= f.text_field :kids_meal %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_attendee %><br />
+    <%= f.text_field :additional_attendee %>
+  </div>
+  <div class="field">
+    <%= f.label :veggie_meal %><br />
+    <%= f.text_field :veggie_meal %>
+  </div>
+  <div class="field">
+    <%= f.label :personal_greeting %><br />
+    <%= f.text_area :personal_greeting %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

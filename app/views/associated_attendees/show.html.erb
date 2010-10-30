@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Attendee:</b>
+  <%= @associated_attendee.attendee_id %>
+</p>
+
+<p>
+  <b>Associated attendee:</b>
+  <%= @associated_attendee.associated_attendee_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_associated_attendee_path(@associated_attendee) %> |
+<%= link_to 'Back', associated_attendees_path %>

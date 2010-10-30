@@ -63,3 +63,944 @@ Started GET "/categories" for 127.0.0.1 at Tue Oct 26 18:57:40 -0200 2010
   [1m[35mCategory Load (0.9ms)[0m  SELECT `categories`.* FROM `categories`
 Rendered categories/index.html.erb within layouts/application (15.7ms)
 Completed 200 OK in 38ms (Views: 25.6ms | ActiveRecord: 0.9ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (120.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (243.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (137.1ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (39.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (137.5ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `tags`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/categories" for 127.0.0.1 at Thu Oct 28 18:33:51 -0200 2010
+  Processing by CategoriesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mCategory Load (16.3ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered categories/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 175ms (Views: 30.2ms | ActiveRecord: 17.0ms)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (128.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (209.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (147.3ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (67.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (113.6ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (145.0ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  describe `categories`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `events`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `tags`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/categories" for 127.0.0.1 at Thu Oct 28 19:35:23 -0200 2010
+  Processing by CategoriesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered categories/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 83ms (Views: 21.1ms | ActiveRecord: 1.3ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (96.7ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (182.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (119.3ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (50.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (113.4ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (43.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (122.0ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (53.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213646)
+  [1m[36mSQL (121.1ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213646')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `events`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `tags`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/categories" for 127.0.0.1 at Thu Oct 28 19:37:05 -0200 2010
+  Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered categories/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 29ms (Views: 15.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/invites" for 127.0.0.1 at Thu Oct 28 19:37:10 -0200 2010
+  Processing by InvitesController#index as HTML
+  [1m[35mInvite Load (0.6ms)[0m  SELECT `invites`.* FROM `invites`
+Rendered invites/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 31ms (Views: 17.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/invites/new" for 127.0.0.1 at Thu Oct 28 19:37:13 -0200 2010
+  Processing by InvitesController#new as HTML
+Rendered invites/_form.html.erb (115.0ms)
+Rendered invites/new.html.erb within layouts/application (125.6ms)
+Completed 200 OK in 148ms (Views: 135.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (89.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (200.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (137.9ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (42.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (136.7ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (120.7ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (125.8ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.4ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `events`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (4.0ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `tags`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/invites/new" for 127.0.0.1 at Thu Oct 28 19:38:40 -0200 2010
+  Processing by InvitesController#new as HTML
+Rendered invites/_form.html.erb (31.2ms)
+Rendered invites/new.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 64ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/invites/new" for 127.0.0.1 at Thu Oct 28 19:38:59 -0200 2010
+  Processing by InvitesController#new as HTML
+Rendered invites/_form.html.erb (49.9ms)
+Rendered invites/new.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 112ms (Views: 90.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/invites/new" for 127.0.0.1 at Thu Oct 28 19:39:02 -0200 2010
+  Processing by InvitesController#new as HTML
+Rendered invites/_form.html.erb (30.9ms)
+Rendered invites/new.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 196ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/invites/new" for 127.0.0.1 at Thu Oct 28 19:39:05 -0200 2010
+  Processing by InvitesController#new as HTML
+Rendered invites/_form.html.erb (28.7ms)
+Rendered invites/new.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 60ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (151.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (192.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (129.4ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (41.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (136.8ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (137.7ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (121.7ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (143.7ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (42.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `events`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.8ms)[0m  DROP DATABASE IF EXISTS `rsvp_test`
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE DATABASE `rsvp_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (97.7ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (93.1ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (81.7ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (73.3ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (73.5ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (82.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (200.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (38.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101028214651')
+  [1m[36mSQL (41.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101026205810')[0m
+  [1m[35mSQL (41.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101026205403')
+  [1m[36mSQL (41.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101028213344')[0m
+  [1m[35mSQL (33.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101028213826')
+
+
+Started GET "/basics" for 127.0.0.1 at Thu Oct 28 20:20:04 -0200 2010
+  Processing by BasicsController#index as HTML
+  [1m[36mBasic Load (0.8ms)[0m  [1mSELECT `basics`.* FROM `basics`[0m
+Mysql::Error: Table 'rsvp_development.basics' doesn't exist: SELECT     `basics`.* FROM       `basics`
+Completed   in 14ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'rsvp_development.basics' doesn't exist: SELECT     `basics`.* FROM       `basics`):
+  app/controllers/basics_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.5ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (81.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (174.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (112.6ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (33.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (117.2ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (28.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (99.2ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (93.9ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (28.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (103.4ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (110.9ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (44.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  describe `basics`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `events`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (2.4ms)[0m  describe `invites`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `options`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/basics" for 127.0.0.1 at Thu Oct 28 20:20:33 -0200 2010
+  Processing by BasicsController#index as HTML
+  [1m[35mBasic Load (0.5ms)[0m  SELECT `basics`.* FROM `basics`
+Rendered basics/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 32ms (Views: 16.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/basics/new" for 127.0.0.1 at Thu Oct 28 20:20:35 -0200 2010
+  Processing by BasicsController#new as HTML
+Rendered basics/_form.html.erb (24.8ms)
+Rendered basics/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 56ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/basics" for 127.0.0.1 at Fri Oct 29 17:57:10 -0200 2010
+  Processing by BasicsController#index as HTML
+  [1m[36mSQL (1.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mBasic Load (15.1ms)[0m  SELECT `basics`.* FROM `basics`
+Rendered basics/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 175ms (Views: 46.7ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/basics/new" for 127.0.0.1 at Fri Oct 29 17:57:14 -0200 2010
+  Processing by BasicsController#new as HTML
+Rendered basics/_form.html.erb (127.3ms)
+Rendered basics/new.html.erb within layouts/application (134.7ms)
+Completed 200 OK in 155ms (Views: 142.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (148.2ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (217.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (146.2ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (42.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (178.3ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (157.9ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (169.8ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (171.6ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (166.2ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttends (20101030165024)
+  [1m[36mSQL (139.0ms)[0m  [1mCREATE TABLE `attends` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165024')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (137.8ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.4ms)[0m  describe `attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `attends`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `attends`[0m
+  [1m[35mSQL (2.6ms)[0m  describe `basics`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (2.6ms)[0m  describe `categories`
+  [1m[36mSQL (2.0ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `events`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `invites`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (118.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (1.5ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (216.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (121.5ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (39.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (138.4ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (129.1ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (147.8ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (138.5ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (138.4ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (137.9ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  describe `attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `basics`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `events`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (123.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (216.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (129.8ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (35.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (146.3ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (138.3ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (146.5ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (44.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (146.9ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (155.9ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (136.9ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.1ms)[0m  describe `attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `basics`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `events`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `tags`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/atendees" for 127.0.0.1 at Sat Oct 30 14:56:50 -0200 2010
+
+ActionController::RoutingError (No route matches "/atendees"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at Sat Oct 30 14:56:55 -0200 2010
+  Processing by AttendeesController#index as HTML
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAttendee Load (0.8ms)[0m  SELECT `attendees`.* FROM `attendees`
+Rendered attendees/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 76ms (Views: 26.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/attendees/new" for 127.0.0.1 at Sat Oct 30 14:56:58 -0200 2010
+  Processing by AttendeesController#new as HTML
+Rendered attendees/_form.html.erb (154.7ms)
+Rendered attendees/new.html.erb within layouts/application (162.9ms)
+Completed 200 OK in 204ms (Views: 180.9ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (114.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (217.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (145.4ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (41.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (155.1ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (154.8ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (44.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (163.4ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (155.2ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (146.7ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (138.8ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (79.1ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (44.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.4ms)[0m  describe `attendees`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `basics`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `events`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `invites`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `question_types`
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW KEYS FROM `question_types`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `tags`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/question_types" for 127.0.0.1 at Sat Oct 30 15:00:03 -0200 2010
+  Processing by QuestionTypesController#index as HTML
+  [1m[36mQuestionType Load (0.6ms)[0m  [1mSELECT `question_types`.* FROM `question_types`[0m
+Rendered question_types/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 25ms (Views: 14.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/question_types/new" for 127.0.0.1 at Sat Oct 30 15:00:05 -0200 2010
+  Processing by QuestionTypesController#new as HTML
+Rendered question_types/_form.html.erb (15.7ms)
+Rendered question_types/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 43ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (122.2ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (209.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (151.5ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (48.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (155.0ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (44.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (171.6ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (154.6ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (146.6ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (59.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (129.8ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (137.9ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (138.5ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (129.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (219.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (128.9ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (50.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (155.3ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (171.8ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (162.6ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (156.2ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (154.9ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (178.4ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (163.5ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (114.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (217.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (136.1ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (230.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (148.1ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (163.4ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (146.8ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (154.7ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (137.4ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (138.9ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (138.0ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (155.0ms)[0m  [1mCREATE TABLE `custom_questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question` text, `question_type_id` int(11), `sort_order` int(11), `permission_level` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170204')
+Migrating to CreateCustomQuestionAnswers (20101030170317)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (87.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (192.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (103.7ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (42.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (88.9ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (79.8ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (88.3ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (105.1ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (96.8ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (96.1ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (98.0ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (96.8ms)[0m  [1mCREATE TABLE `custom_questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question` text, `question_type_id` int(11), `sort_order` int(11), `permission_level` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170204')
+Migrating to CreateCustomQuestionAnswers (20101030170317)
+  [1m[36mSQL (105.3ms)[0m  [1mCREATE TABLE `custom_question_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `answer` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170317')
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.5ms)[0m  describe `attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `basics`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `custom_question_answers`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `custom_question_answers`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `custom_questions`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_questions`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `events`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `invites`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `question_types`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `question_types`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (140.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (210.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (139.9ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (42.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (171.9ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (146.7ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (139.2ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (138.7ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (129.9ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (154.6ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (138.8ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (138.8ms)[0m  [1mCREATE TABLE `custom_questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question` text, `question_type_id` int(11), `sort_order` int(11), `permission_level` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (41.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170204')
+Migrating to CreateCustomQuestionAnswers (20101030170317)
+  [1m[36mSQL (138.1ms)[0m  [1mCREATE TABLE `custom_question_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `answer` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170317')
+Migrating to CreateCustomQuestionAttendees (20101030170737)
+  [1m[36mSQL (145.5ms)[0m  [1mCREATE TABLE `custom_question_attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `attendee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170737')
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.4ms)[0m  describe `attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `basics`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `custom_question_answers`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_question_answers`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `custom_question_attendees`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_question_attendees`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `custom_questions`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_questions`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `events`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `invites`
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `options`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `question_types`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `question_types`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (120.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (225.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (162.8ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (67.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (171.9ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (62.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (179.9ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (53.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (179.7ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (171.6ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (41.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (163.0ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (121.0ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (129.9ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (138.1ms)[0m  [1mCREATE TABLE `custom_questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question` text, `question_type_id` int(11), `sort_order` int(11), `permission_level` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170204')
+Migrating to CreateCustomQuestionAnswers (20101030170317)
+  [1m[36mSQL (138.3ms)[0m  [1mCREATE TABLE `custom_question_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `answer` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (38.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170317')
+Migrating to CreateCustomQuestionAttendees (20101030170737)
+  [1m[36mSQL (137.5ms)[0m  [1mCREATE TABLE `custom_question_attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `attendee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170737')
+Migrating to CreateAttendeeAnswers (20101030170930)
+  [1m[36mSQL (130.1ms)[0m  [1mCREATE TABLE `attendee_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `answer` text, `attendee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (45.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170930')
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.4ms)[0m  describe `attendee_answers`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendee_answers`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `basics`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `custom_question_answers`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_question_answers`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `custom_question_attendees`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_question_attendees`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `custom_questions`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_questions`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `events`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `options`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `question_types`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `question_types`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `tags`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (152.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (216.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateCategories (20101026205403)
+  [1m[35mSQL (161.1ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (67.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205403')
+Migrating to CreateTags (20101026205810)
+  [1m[36mSQL (180.3ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (53.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101026205810')
+Migrating to CreateEvents (20101028213344)
+  [1m[36mSQL (172.4ms)[0m  [1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `location` text, `start` datetime, `end` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (62.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213344')
+Migrating to CreateInvites (20101028213826)
+  [1m[36mSQL (179.8ms)[0m  [1mCREATE TABLE `invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` varchar(255), `date` datetime, `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (62.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028213826')
+Migrating to CreateOptions (20101028214651)
+  [1m[36mSQL (188.2ms)[0m  [1mCREATE TABLE `options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` text, `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (62.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028214651')
+Migrating to CreateBasics (20101028221855)
+  [1m[36mSQL (171.5ms)[0m  [1mCREATE TABLE `basics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `email` text, `phone` text, `response` varchar(255), `guests` text, `children` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (61.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101028221855')
+Migrating to CreateAttendees (20101030165117)
+  [1m[36mSQL (146.3ms)[0m  [1mCREATE TABLE `attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `rsvp_date` datetime, `rsvp_status` varchar(255), `note` text, `kids_meal` varchar(255), `additional_attendee` varchar(255), `veggie_meal` varchar(255), `personal_greeting` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (62.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165117')
+Migrating to CreateQuestionTypes (20101030165920)
+  [1m[36mSQL (122.4ms)[0m  [1mCREATE TABLE `question_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_type` varchar(255), `friendly_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030165920')
+Migrating to CreateCustomQuestions (20101030170204)
+  [1m[36mSQL (121.7ms)[0m  [1mCREATE TABLE `custom_questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question` text, `question_type_id` int(11), `sort_order` int(11), `permission_level` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170204')
+Migrating to CreateCustomQuestionAnswers (20101030170317)
+  [1m[36mSQL (121.8ms)[0m  [1mCREATE TABLE `custom_question_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `answer` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170317')
+Migrating to CreateCustomQuestionAttendees (20101030170737)
+  [1m[36mSQL (152.3ms)[0m  [1mCREATE TABLE `custom_question_attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `attendee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170737')
+Migrating to CreateAttendeeAnswers (20101030170930)
+  [1m[36mSQL (119.5ms)[0m  [1mCREATE TABLE `attendee_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11), `answer` text, `attendee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (35.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030170930')
+Migrating to CreateAssociatedAttendees (20101030171135)
+  [1m[36mSQL (354.7ms)[0m  [1mCREATE TABLE `associated_attendees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `attendee_id` int(11), `associated_attendee_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (36.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101030171135')
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `associated_attendees`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `associated_attendees`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `attendee_answers`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `attendee_answers`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `attendees`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `attendees`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `basics`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `basics`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `categories`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `custom_question_answers`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `custom_question_answers`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `custom_question_attendees`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `custom_question_attendees`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `custom_questions`
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW KEYS FROM `custom_questions`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `events`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `invites`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `invites`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `options`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `options`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `question_types`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `question_types`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `tags`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `tags`[0m
+
+
+Started GET "/custom_questions" for 127.0.0.1 at Sat Oct 30 15:16:04 -0200 2010
+  Processing by CustomQuestionsController#index as HTML
+  [1m[35mCustomQuestion Load (0.6ms)[0m  SELECT `custom_questions`.* FROM `custom_questions`
+Rendered custom_questions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/custom_questions/new" for 127.0.0.1 at Sat Oct 30 15:16:08 -0200 2010
+  Processing by CustomQuestionsController#new as HTML
+Rendered custom_questions/_form.html.erb (19.6ms)
+Rendered custom_questions/new.html.erb within layouts/application (196.1ms)
+Completed 200 OK in 214ms (Views: 203.7ms | ActiveRecord: 0.0ms)

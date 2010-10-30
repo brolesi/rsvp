@@ -1,0 +1,25 @@
+<%= form_for(@associated_attendee) do |f| %>
+  <% if @associated_attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@associated_attendee.errors.count, "error") %> prohibited this associated_attendee from being saved:</h2>
+
+      <ul>
+      <% @associated_attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :attendee_id %><br />
+    <%= f.text_field :attendee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :associated_attendee_id %><br />
+    <%= f.text_field :associated_attendee_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

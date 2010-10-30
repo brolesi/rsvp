@@ -1,0 +1,27 @@
+<h1>Listing attendee_answers</h1>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Attendee</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attendee_answers.each do |attendee_answer| %>
+  <tr>
+    <td><%= attendee_answer.question_id %></td>
+    <td><%= attendee_answer.answer %></td>
+    <td><%= attendee_answer.attendee_id %></td>
+    <td><%= link_to 'Show', attendee_answer %></td>
+    <td><%= link_to 'Edit', edit_attendee_answer_path(attendee_answer) %></td>
+    <td><%= link_to 'Destroy', attendee_answer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attendee answer', new_attendee_answer_path %>

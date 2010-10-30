@@ -1,0 +1,25 @@
+<h1>Listing custom_question_attendees</h1>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Attendee</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @custom_question_attendees.each do |custom_question_attendee| %>
+  <tr>
+    <td><%= custom_question_attendee.question_id %></td>
+    <td><%= custom_question_attendee.attendee_id %></td>
+    <td><%= link_to 'Show', custom_question_attendee %></td>
+    <td><%= link_to 'Edit', edit_custom_question_attendee_path(custom_question_attendee) %></td>
+    <td><%= link_to 'Destroy', custom_question_attendee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Custom question attendee', new_custom_question_attendee_path %>

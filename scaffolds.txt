@@ -1,0 +1,9 @@
+rails g scaffold Attendee first_name:string last_name:string rsvp_date:datetime rsvp_status:string note:text kids_meal:string additional_attendee:string veggie_meal:string personal_greeting:text
+rails g scaffold QuestionType question_type:string friendly_name:string
+rails g scaffold CustomQuestion question:text question_type_id:integer sort_order:integer permission_level:string
+rails g scaffold CustomQuestionAnswer question_id:integer answer:text
+rails g scaffold CustomQuestionAttendee question_id:integer attendee_id:integer
+rails g scaffold AttendeeAnswer question_id:integer answer:text attendee_id:integer
+rails g scaffold AssociatedAttendee attendee_id:integer associated_attendee_id:integer
+rake db:migrate:reset
+

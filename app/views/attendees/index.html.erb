@@ -1,0 +1,39 @@
+<h1>Listing attendees</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Rsvp date</th>
+    <th>Rsvp status</th>
+    <th>Note</th>
+    <th>Kids meal</th>
+    <th>Additional attendee</th>
+    <th>Veggie meal</th>
+    <th>Personal greeting</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attendees.each do |attendee| %>
+  <tr>
+    <td><%= attendee.first_name %></td>
+    <td><%= attendee.last_name %></td>
+    <td><%= attendee.rsvp_date %></td>
+    <td><%= attendee.rsvp_status %></td>
+    <td><%= attendee.note %></td>
+    <td><%= attendee.kids_meal %></td>
+    <td><%= attendee.additional_attendee %></td>
+    <td><%= attendee.veggie_meal %></td>
+    <td><%= attendee.personal_greeting %></td>
+    <td><%= link_to 'Show', attendee %></td>
+    <td><%= link_to 'Edit', edit_attendee_path(attendee) %></td>
+    <td><%= link_to 'Destroy', attendee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attendee', new_attendee_path %>

@@ -1,0 +1,2 @@
+module CustomQuestionAttendeesHelper
+end

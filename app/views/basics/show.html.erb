@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @basic.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @basic.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @basic.phone %>
+</p>
+
+<p>
+  <b>Response:</b>
+  <%= @basic.response %>
+</p>
+
+<p>
+  <b>Guests:</b>
+  <%= @basic.guests %>
+</p>
+
+<p>
+  <b>Children:</b>
+  <%= @basic.children %>
+</p>
+
+
+<%= link_to 'Edit', edit_basic_path(@basic) %> |
+<%= link_to 'Back', basics_path %>

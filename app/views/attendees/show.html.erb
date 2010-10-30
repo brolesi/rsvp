@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @attendee.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @attendee.last_name %>
+</p>
+
+<p>
+  <b>Rsvp date:</b>
+  <%= @attendee.rsvp_date %>
+</p>
+
+<p>
+  <b>Rsvp status:</b>
+  <%= @attendee.rsvp_status %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @attendee.note %>
+</p>
+
+<p>
+  <b>Kids meal:</b>
+  <%= @attendee.kids_meal %>
+</p>
+
+<p>
+  <b>Additional attendee:</b>
+  <%= @attendee.additional_attendee %>
+</p>
+
+<p>
+  <b>Veggie meal:</b>
+  <%= @attendee.veggie_meal %>
+</p>
+
+<p>
+  <b>Personal greeting:</b>
+  <%= @attendee.personal_greeting %>
+</p>
+
+
+<%= link_to 'Edit', edit_attendee_path(@attendee) %> |
+<%= link_to 'Back', attendees_path %>
