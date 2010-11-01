@@ -21,6 +21,12 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def add
+    @attendee = Attendee.new
+    #@snippet = Snippet.find(params[:id])
+    #render :page => "snippets/raw", :layout => false
+  end
+
   # GET /attendees/new
   # GET /attendees/new.xml
   def new

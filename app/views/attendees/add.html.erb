@@ -1,0 +1,41 @@
+<%= form_for(@attendee) do |f| %>
+  <% if @attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% @attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :rsvp_status %><br />
+    <%= f.text_field :rsvp_status, :value => 'noResponse' %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_attendee %><br />
+    <%= f.text_field :additional_attendee, :value => 'N' %>
+  </div>
+  <div class="field">
+    <%= f.label :personal_greeting %><br />
+    <%= f.text_area :personal_greeting %>
+  </div>
+  <div class="field">
+    <%#= f.select("additional_attendee", Attendee.all.collect {|p| [p.first_name + ' ' + p.last_name, p.id]}, {:include_blank => true}, {:size => '10', :multiple => 'multiple'}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

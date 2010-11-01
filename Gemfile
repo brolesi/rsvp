@@ -28,3 +28,6 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+group :development, :test do
+  gem 'ruby-debug'
+end

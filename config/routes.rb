@@ -1,29 +1,4 @@
 Rsvp::Application.routes.draw do
-  resources :associated_attendees
-
-  resources :attendee_answers
-
-  resources :custom_question_attendees
-
-  resources :custom_question_answers
-
-  resources :custom_questions
-
-  resources :question_types
-
-  resources :attendees
-
-  resources :basics
-
-  resources :options
-
-  resources :invites
-
-  resources :events
-
-  resources :tags
-
-  resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -31,6 +6,8 @@ Rsvp::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  get 'attendees/add', :to => "attendees#add", :as => "add"
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -81,4 +58,30 @@ Rsvp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  resources :associated_attendees
+
+  resources :attendee_answers
+
+  resources :custom_question_attendees
+
+  resources :custom_question_answers
+
+  resources :custom_questions
+
+  resources :question_types
+
+  resources :attendees
+
+  resources :basics
+
+  resources :options
+
+  resources :invites
+
+  resources :events
+
+  resources :tags
+
+  resources :categories
+
 end
