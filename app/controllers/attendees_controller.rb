@@ -21,6 +21,14 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def answer
+    #if params[:first_name]
+      #@attendee = Attendee.find_by_first_name(params[:first_name]) || nil
+    #else
+    #  @attendee = nil
+    #end
+  end
+
   def add
     @attendee = Attendee.new
     #@snippet = Snippet.find(params[:id])
