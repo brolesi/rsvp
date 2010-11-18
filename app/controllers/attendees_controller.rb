@@ -22,6 +22,7 @@ class AttendeesController < ApplicationController
   end
 
   def answer
+    @attendee = Attendee.new
     #if params[:first_name]
       #@attendee = Attendee.find_by_first_name(params[:first_name]) || nil
     #else
@@ -93,5 +94,10 @@ class AttendeesController < ApplicationController
       format.html { redirect_to(attendees_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+
+  def fullfill
   end
 end

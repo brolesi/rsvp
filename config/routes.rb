@@ -6,9 +6,10 @@ Rsvp::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
- get 'attendees/answer/:first_name', :to => "attendees#answer", :as => "answer"
- get 'attendees/answer', :to => "attendees#answer", :as => "answer"
- get 'attendees/add', :to => "attendees#add", :as => "add"
+  # get 'attendees/answer/:first_name', :to => "attendees#answer", :as => "answer"
+ get 'attendees/add',      :to => "attendees#add", :as => "add"
+ get 'attendees/answer',   :to => "attendees#answer",   :as => "answer"
+ get 'attendees/fullfill', :to => "attendees#fullfill", :as => "fullfill"
 
 
   # Sample of named route:
